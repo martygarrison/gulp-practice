@@ -1,0 +1,1073 @@
+
+.information-bar
+	position: relative
+	width: 850px
+
+	.message
+		background-color: #edf7f8
+		color: #333
+		padding: 1em 1em 1em 3.5em
+		border: 1px solid #189
+		border-radius: 0.2em
+
+
+		h4
+			margin: 0
+			font-size: 1em
+			position: relative
+
+		h4:before
+			content: "\e031"
+			font-size: 24px
+			position: absolute
+			left: -1.4em
+			color: #189
+
+		&.undo
+			h4:before
+				content: "\e166"
+
+
+		p
+			font-size: .9em
+			margin: .3em 0 0
+
+		.thumb
+			border: 1px solid #cccccc
+			float: right
+			height: 5.5em
+			margin: -3.1em 2.5em -.2em 0
+
+		h4.feedback
+			color: #189
+			margin: .5em 3em 0 0
+			position: relative
+			padding-top: .5em
+
+		h4.feedback::before
+			content: "\e0b9"
+			font-size: 24px
+			position: absolute
+			left: -1.4em
+
+	&.rst-beta
+		.thumb
+			float: right
+			border: none
+			margin: -4.5em 2.5em -0.2em 0
+
+	&.rst-ie8
+		.message
+			padding: 1em
+
+		.ie8-notice
+			float: left
+			margin: 0 1em 0 0
+
+	.close
+		border-radius: 50%
+		cursor: pointer
+		font-size: 1.3em
+		padding: .2em
+		position: absolute
+		right: .8em
+		top: .8em
+		z-index: 2
+		&:hover
+			background: rgba(150, 150, 150, .3)
+		&:before
+			content: "\e5cd"
+
+	input[type="checkbox"],
+	input[type="checkbox"]:checked ~ .message,
+	input[type="checkbox"]:checked ~ .close
+		display: none
+
+.rst
+	font-family: "roboto", "Open Sans", sans-serif
+	line-height: 120%
+
+	table, button, input
+		font-family: "roboto", "Open Sans", sans-serif !important
+
+	h1, h2, h3, h4, h5, h6, strong, b,
+	.button.btnA, .button.red, .button.btnB, .button.black, .button.btnC, .button.teal
+		font-weight: 500
+
+	button
+		background: none
+		border: none
+		border-radius: 0.2em
+		color: #189
+		cursor: pointer
+		font-weight: 500
+		padding: .5em .8em
+		&:hover
+			background: #f0f0f0
+
+		&.print
+			&::before
+				content: "\e555"
+				font-size: 1.2em
+				margin: 0 .3em 0 0
+				color: #555
+
+	.btn-feedback
+		background: #555
+		overflow: hidden
+		position: fixed
+		height: 9em
+		width: 2.8em
+		right: 0
+		top: 50%
+		z-index: 100
+
+		*
+			position: absolute
+			transform: rotate(-90deg)
+			-ms-transform: rotate(-90deg)
+			-webkit-transform: rotate(-90deg)
+		a
+			color: white
+			display: block
+			left: -1.5em
+			bottom: 4.3em
+			padding: .7em
+			white-space: nowrap
+
+			&:hover, &:visited
+				color: white!important
+
+		span.icon
+			background: #222
+			bottom: 0
+			font-size: 1.25em
+			overflow: hidden
+			white-space: nowrap
+
+			&:before
+				content: "\e0b9"
+				color: white
+				padding: .6em
+				cursor: pointer
+
+			&:hover:before
+				content: "\e5cd"
+
+	&[lang="kr"]
+		.btn-feedback a
+				left: -.85em
+
+	&[lang="jp"]
+		.btn-feedback
+			height: 10em
+			a
+				left: -2.1em
+				bottom: 5em
+
+	&[lang="cn"]
+		.btn-feedback a
+			left: -1.2em
+
+	.spinner-target
+		position: relative
+
+	.spinner-container
+		position: absolute
+		width: 100%
+		height: 100%
+		top: 0
+		bottom: 0
+		background: rgba(255, 255, 255, .6)
+		z-index: 10
+
+	.spinner
+		-webkit-animation: clockwise 0.75s linear infinite
+		-moz-animation: clockwise 0.75s linear infinite
+		animation: clockwise 0.75s linear infinite
+		border: 3px solid
+		border-color: rgba(17, 136, 153, 1) rgba(17, 136, 153, 1) rgba(17, 136, 153, 1) rgba(255, 255, 255, 0.25)
+		border-radius: 100%
+		height: 30px
+		width: 30px
+		margin: 300px auto
+		background: url(/assets/images/spinner.gif)\9
+		border: none\9
+
+		*::before, *::after
+			content: ""
+
+		@keyframes clockwise
+			to
+				transform: rotate(360deg) translatez(0)
+		@-moz-keyframes clockwise
+			to
+				-moz-transform: rotate(360deg) translatez(0)
+		@-webkit-keyframes clockwise
+			to
+				-webkit-transform: rotate(360deg) translatez(0)
+
+	.collapsible
+		position: relative
+		display: block
+
+		&[collapsed="true"]
+			.collapse-content
+				display: none
+
+	.label-red
+		color: #c00
+
+	ul.no-style
+		margin: 0
+		>li
+			padding: 0
+			background: none
+
+	ul.no-icon
+		margin: 0
+		>li
+			padding: 0 0 0 1.5em
+			background: none
+
+	.checkboxAndRadioStyle
+		color: #555555
+		cursor: default
+		display: inline-block
+		padding: .5em
+		margin: -.5em -.3em -.5em -.5em
+		vertical-align: sub
+		font-size: 16px
+
+	ti-check-box,
+	ti-radio
+		position: relative
+		.large
+			font-size: 21px
+
+		span[name=lbl]
+			margin: 0 .5em 0 -.3em
+
+	.checkbox
+		@extend .checkboxAndRadioStyle
+		&::before
+			content: "\e835"
+
+		&.checked
+			&::before
+				content: "\e834"
+
+	.radio
+		@extend .checkboxAndRadioStyle
+		&::before
+			content: "\e836"
+
+		&.checked
+			&::before
+				content: "\e837"
+
+
+
+ti-selection-tool
+	font-size: .929em
+	display: block
+	margin: 0 -2em 0 0
+	.superhead
+		border-bottom: 1px solid #189
+		margin-right: 2em
+		height: 3.3em
+	.superheadbtnwrap
+		width: 17em
+		padding: .5em 0 .5em .5em
+	.floatright
+		float: right
+	.head
+		position: relative
+		padding: .5em 0 .5em .5em
+		width: 100%
+		overflow: hidden
+		height: 3.3em
+
+		span, h2
+			display: block
+			float: left
+			padding-top: .5em
+
+		h2
+			font-size: 1em
+
+		button
+			float: right
+
+		.button
+			&:not(.btnA)
+				background: none
+				border: none
+				border-radius: 0.2em
+				color: #189
+				cursor: pointer
+				float: right
+				font-weight: 500
+				padding: 0.5em 0.8em
+				&:hover
+					background: #f0f0f0
+
+		.f_left
+			button
+				float: left
+
+	.borderLeft
+		padding-left: 2em
+
+	.rst-overflow-area
+		display: table
+		width: 100%
+		padding: 0 2em 0 0
+
+	.parameters ul.lined:first-child
+		border-top: none
+
+
+
+ti-filters .body,
+ti-data-table table
+	border-top: 3px solid #189
+
+ti-filters
+	float: left
+	width: 17em
+
+	.collapsible
+		background: #f9f9f9
+		border-bottom: 1px solid #e0e0e0
+
+		.checkbox
+			position: absolute
+			margin: -0.55em -0.3em -0.5em -1.8em
+
+		.checkbox + span[name=lbl]
+			margin: 0
+
+		.collapse-header
+			color: #333
+			cursor: pointer
+			display: block
+			padding: .65em 2em .7em 2.7em
+			overflow: hidden
+			font-size: .95em
+			font-weight: 500
+
+			&::before
+				content: "\E313"
+				color: #333
+				font-size: 1.6em
+				position: absolute
+				right: .3em
+				top: .35em
+
+			.checkbox
+				top: -.1em
+
+		&[collapsed="false"]
+			.collapse-header
+				&::before
+					content: "\E316"
+
+		.collapse-content
+			background: white
+
+			.filter-items
+				padding: 1em .5em 0 2.5em
+				overflow-y: auto
+				max-height: 14.5em
+
+			.filter-button
+				padding: .5em 0 1em 2.5em
+
+
+	.filterItem
+		display: block
+		margin: 0 0 1em 1.6em
+
+	select
+		margin: 0 0 1em
+
+	.collapsible.highlight
+		background: #d9f1f4
+
+
+	&+ti-data-table
+		display: block
+		margin: 0 2em 0 19em
+
+
+ti-slider-nui
+	display: block
+	padding: 0 1em
+	margin: 0 0 .5em -1.5em
+	overflow: hidden
+
+	*::before
+		color: #b4b4b4
+		font: 1.3em Arial, 'Helvetica Neue', Helvetica, sans-serif
+		font-weight: bold
+		margin: .1em .2em 0 0
+
+	.range1, .range2
+		input[type=text]
+			width: 4.5em
+			float: left
+			margin: 0 0 .4em
+
+	.range1
+		float: left
+		&::before
+			content: "≥"
+
+	.range2
+		float: right
+		&::before
+			content: "≤"
+
+	.filterUnit
+		margin: 0 0 0 1.2em
+		font-size: .9em
+		max-width: 4.5em
+
+
+ti-data-table
+	min-height: 900px
+	position: relative
+
+	.head
+		&.hidden
+			display: none
+
+		&.alternate
+			background: #edf7f8
+			overflow: hidden
+
+			button
+				padding: 0.5em 0.8em
+				margin: 0 2em 0 0
+				float: left
+
+	table
+		width: 100%
+		thead
+			background: #f9f9f9
+
+		th, td
+			border-bottom: 1px solid #e0e0e0
+			vertical-align: top
+			padding: .6em
+
+		th
+			border-width: 2px
+			text-align: left
+			vertical-align: middle
+			color: #333
+			padding: .7em .6em
+			font-size: .9em
+			font-weight: 500
+
+			> span
+				cursor: pointer
+				display: block
+				position: relative
+
+
+			&.headerSortDescending, &.headerSortAscending
+				padding: 0 0 0 1.5em
+				font-weight: 500
+
+				& span::before
+					content: "\e5db"
+					color: #189
+					font-size: 1.2em
+					font-weight: bold
+					left: -1.1em
+					margin: -.45em 0 0
+					position: absolute
+					top: 50%
+
+			&.headerSortAscending
+				& span::before
+					content: "\e5d8"
+
+
+			.search-parts
+				font-size: 1.125em
+				float: left
+				margin-top: .5em
+				position: relative
+
+				&::before
+					position: absolute
+					right: .2em
+					top: .25em
+					font-size: 1.4em
+					content: "\e8b6"
+
+				input
+					width: 14em
+					padding: .25em .3em
+
+					&[type=button]
+						background: none
+						border: none
+						cursor: pointer
+						position: absolute
+						background: none
+						top: 0
+						right: 0
+						bottom: 0
+						padding: 0
+						width: 2em
+
+					&.btn-reset
+						display: none
+
+				&.reset
+					&::before
+						content: "\e14c"
+
+					.btn-reset
+						display: block
+					.btn-search
+						display: none
+
+				.auto-complete
+					background: white
+					position: absolute
+					z-index: 10
+					width: 100%
+					max-height: 20em
+					overflow-y: auto
+					border: 1px solid silver
+					box-shadow: 3px 3px 3px rgba(200,200,200,0.6)
+					font-weight: normal
+
+					ul
+						padding: 0
+						margin: 0
+
+					li
+						background: none
+						margin: 0
+						padding: .3em
+
+						&:hover
+							background: #f0f0f0
+
+						&.active
+							background: #f0f0f0
+
+						span
+							background: #ffffb3
+
+		tbody tr
+			&:hover
+				background: #edf7f8
+			&.selected
+				background: #ffffe5
+			&.open
+				td
+					border-bottom: none
+
+		col.hilighted,
+		th.hilighted,
+		td.hilighted
+			background: #edf7f8
+
+		col.hilighted,
+		th.hilighted
+			-webkit-animation: fadeOut 4s 2s forwards
+			animation: fadeOut 4s 2s forwards
+
+		@-webkit-keyframes fadeOut
+			50%
+				background: rgba(237, 247, 248, 1)
+			100%
+				background: rgba(237, 247, 248, 0)
+
+		@keyframes fadeOut
+			50%
+				background: rgba(237, 247, 248, 1)
+			100%
+				background: rgba(237, 247, 248, 0)
+
+		&.selectable
+			th:first-child
+				padding-left: 8em
+				min-width: 20em
+
+				button
+					position: absolute
+					left: -6.5em
+					top: 0
+					bottom: 0
+					margin: 0
+					padding: .1em .7em
+
+				&.headerSortDescending, &.headerSortAscending
+					padding-left: 8em
+					&::before
+						left: 1.2em
+
+			td:first-child
+				padding-left: 7em
+				position: relative
+
+				.checkbox
+					position: absolute
+					left: 1.7em
+					top: 0.2em
+					bottom: 0
+					width: 2.5em
+					margin: 0
+					padding: .5em .7em
+
+	.push-down-opened
+		td
+			border: none
+
+		a[name="phlink"]
+			font-weight: 500
+
+	.push-down-row
+		&:hover
+			background: none
+		td
+			padding: 0
+			position: relative
+
+		.close
+			position: absolute
+			cursor: pointer
+			font-size: 14px
+			top: .7em
+			left: .7em
+			z-index: 10
+
+			&:before
+				content: "\E14C"
+				background: rgba(150, 150, 150, .5)
+				color: white
+				padding: .2em
+				border-radius: 1.5em
+
+		.push-down-detail-area
+			border-top: 1px dotted #e0e0e0
+			padding: 2em 3em
+			position: relative
+
+			h4, h5
+				margin: 0 0 .7em
+
+			a.buy-sample
+				color: #c00
+				display: block
+				margin: 0 0 .7em
+
+				&::before
+					content: "\e8cc"
+					margin: 3px 5px 0 0
+
+			.row
+				margin: 0
+				// max-width: 1300px
+
+			.no-style
+				margin: 0
+				li
+					padding: 0
+					background: none
+
+			.diagram-zoom
+				cursor: pointer
+				float: left
+				overflow: hidden
+				position: relative
+				&:before
+					background: rgba(0,0,0,0.5)
+					top: 50%
+					left: 50%
+					font-size: 3em
+					color: #FFF
+					border-radius: .25em
+					padding: .1em
+					margin: -.6em 0 0 -.6em
+					z-index: 1
+					position: absolute
+					content: "\e8b6"
+				img
+					max-height: 10em
+
+				&:hover
+					&::before
+						content: "\e8ff"
+				&.zoomed
+					&::before
+						content: "\e900"
+
+			.diagram-box
+				background: #f9f9f9
+				margin: 2em -3em 0
+				padding: 2em
+				position: relative
+				text-align: center
+				img
+					border: 1em solid white
+					display: block
+					max-height: 30em
+					margin: 0 auto 1.2em
+
+	.load-more
+		button
+			background: #f9f9f9
+			border-bottom: 1px solid #e0e0e0
+			display: block
+			font-size: 1.1em
+			margin: 0 0 1em 0
+			padding: .7em
+			position: relative
+			text-align: center
+			width: 100%
+
+			&:hover
+				background: #f0f0f0
+
+			&::before
+				content: "\e5cf"
+				margin: .2em 0 0 .2em
+				position: absolute
+				left: 50%
+				top: .7em
+				margin-left: 2.8em
+
+	.bold
+		font-weight: 500
+
+	.rst-sticky
+		background: #fff
+		position: absolute
+		top: 0
+		z-index: 12
+		width: 100%
+
+
+ti-quick-searches
+	padding: 0 2em 0 0
+	display: block
+
+
+.ti-quick-search
+	background: #f9f9f9
+	border-top: 3px solid #999
+	display: block
+	padding: 1.5em 2.5em
+	max-width: 100%
+	overflow: hidden
+	margin: 0 0 2em 0
+
+	h2
+		line-height: 150%
+
+
+	.quick-para
+		display: table-cell
+		width: 40em
+		padding: 0 0 0 2em
+
+	.quick-search
+		display: table-cell
+		border-right: 1px dotted #e0e0e0
+		width: 55em
+
+		.row
+			margin: 0 0 .8em
+			&:last-child
+				margin: 0
+
+		input[type=text]
+			width: 120px
+
+		input, select
+			margin-left: 1em
+			&:first-child
+				margin: 0
+
+		label
+			text-align: right
+		.c3
+			label
+				display: block
+				padding: .3em 0
+
+		ti-slider-nui
+			display: block
+			padding: 0 1em 0
+			margin: 0 0 .5em -.5em
+			overflow: hidden
+			max-width: 14.5em
+
+			input[type=text]
+				width: 4.5em
+
+			.range1
+				margin-left: -.5em
+
+			.noUi-target
+				margin-left: -.3em
+
+	.dotted-line
+		border: 1px dotted #ccc
+		border-radius: 5px
+		padding: 1em
+		margin: .8em 0
+		margin-left: -.2em
+
+	.qs-info
+		margin: .3em 0 0
+		color: #189
+		display: none
+
+	input[type="radio"] + label
+		margin-top: -6px
+
+
+	&[for="pwr"]
+		.quick-search
+			border-right: none
+
+
+	&[for="mcu"]
+		.part-requirement, .part-function
+			display: table-cell
+			min-width: 40em
+
+		.part-function
+			border-left: 1px dotted #ccc
+			padding-left: 2.5em
+
+	&[for="dsp_c6"]
+		label
+			width: 100%
+			a
+				padding: .3em .6em
+				border: 1px solid #aaa
+				background: #e0e0e0
+				color: #333
+
+			a.selected
+				border: 1px solid #156
+				background: #189
+				color: white
+
+
+	&[for="ldo"]
+		input[type=text]
+			width: 5em
+		label
+			display: block
+			padding-right: .5em
+
+
+		.search-inputs
+			max-width: 45em!important
+
+		.qs-left, .qs-right
+			float: left
+			position: relative
+
+			h5
+				position: absolute
+				background: #f9f9f9
+				padding: .5em
+				z-index: 10
+				top: -1.4em
+				left: .5em
+
+		.qs-left
+			width: 39%
+			margin-right: 3%
+
+
+		.qs-right
+			width: 57%
+
+		.button
+			margin-left: 41%
+
+		.quick-search .row
+			margin: 0 0 .5em
+
+		.cell
+			display: table-cell
+			padding: .5em 0
+
+			&:first-child
+				width: 7.5em
+
+	&[for="pwr"]
+		input[type=text]
+			width: 5em
+		label
+			display: block
+			padding-right: .5em
+			margin-top: 0.25em
+
+
+		.search-inputs
+			max-width: 30em!important
+		h3
+			margin-bottom: 1em
+
+		.quick-search
+			border-right: none
+			.row
+				margin: 0 0 .5em
+
+	&[for="buck"]
+		input[type=text]
+			width: 5em
+		label
+			display: block
+			padding-right: .5em
+
+		.search-inputs
+			max-width: 55em!important
+
+		.qs-left, .qs-right
+			float: left
+			position: relative
+
+			h5
+				position: absolute
+				background: #f9f9f9
+				padding: .5em
+				z-index: 10
+				top: -1.4em
+				left: .5em
+
+		.qs-left
+			width: 57%
+			margin-right: 3%
+
+		.qs-right
+			width: 37%
+			label
+				margin-left: 1em
+
+		.button
+			margin-left: 50%
+
+		.quick-search .row
+			margin: 0 0 .5em
+
+		.cell
+			display: table-cell
+			padding: .5em 0
+			&:first-child
+				width: 2em
+			&:nth-child(2)
+				width: 8em
+
+		.cell2
+			display: table-cell
+			padding: .5em 0
+			&:first-child
+				width: 7.5em
+			&:nth-child(2)
+				width: 8em
+			&:nth-child(3)
+				width: 1.5em
+			&:nth-child(4)
+				width: 8em
+
+		.cell3
+			display: table-cell
+			padding: .5em 0
+			&:first-child
+				width: 5em
+			&:nth-child(2)
+				width: 8em
+			&:nth-child(3)
+				width: 5em
+			&:nth-child(4)
+				width: 8em
+
+.rst-compare
+	float: left
+	font-size: 13px
+	margin: 1em
+	min-width: 700px
+
+	.head
+		overflow: hidden
+		padding: .5em
+		h2
+			float: left
+			margin: 0
+		button
+			float: right
+	table
+		border-top: 3px solid #189
+		width: 100%
+
+		tr.partNameRow
+			td
+				background: #fff
+
+		tr:hover
+			td, th
+				background: #edf7f8
+
+		th, td
+			border-bottom: 1px solid #e0e0e0
+			padding: .5em 2em .5em .5em
+			vertical-align: top
+
+		th
+			background: #f9f9f9
+			text-align: left
+			font-size: .9em
+			font-weight: 500
+
+		h4
+			a
+				color: #189
+
+		.compareSampleBuy
+			color: #c00
+
+
+
+
+@media screen and (max-width: 640px)
+	.ti-quick-search
+		&[for="pwr"]
+			label
+				text-align: left
+		.row
+			.c6
+				margin-bottom: 0.5em
+
+@media screen and (max-width: 1024px)
+	ti-selection-tool
+		font-size: 1em
+
+
+
+
+
+
+.wbsearch-panel-table td 
+    padding-left: 0.25em !important
+    
+.wbsearch-panel-table
+    border: 0
+   
+.wbsearch-panel-table td:hover, .wbsearch-panel-table tr:hover 
+        background: #FFF
